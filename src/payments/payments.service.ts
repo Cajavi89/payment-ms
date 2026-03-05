@@ -52,7 +52,7 @@ export class PaymentsService {
   stripeWebhook(req: Request, res: Response) {
     let event: Stripe.Event;
 
-    const endpointSecret = envs.stripeEndpointSecret;
+    const endpointSecret = envs.stripeEndPointSecret;
     try {
       const sig = req.headers['stripe-signature'] ?? '';
       event = this.stripe.webhooks.constructEvent(
